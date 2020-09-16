@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardServer.WebApi", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardServer.Services.LanMonitor.Domain", "DashboardServer.Services.LanMonitor.Domain\DashboardServer.Services.LanMonitor.Domain.csproj", "{72C73E01-6A0D-41EC-934F-A84F7ECD9F48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardServer.Services.LanMonitor.Infrastructure", "DashboardServer.Services.LanMonitor.Infrastructure\DashboardServer.Services.LanMonitor.Infrastructure.csproj", "{0FB51B5D-630E-47F0-98CE-3AE94279E2D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{72C73E01-6A0D-41EC-934F-A84F7ECD9F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C73E01-6A0D-41EC-934F-A84F7ECD9F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72C73E01-6A0D-41EC-934F-A84F7ECD9F48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB51B5D-630E-47F0-98CE-3AE94279E2D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB51B5D-630E-47F0-98CE-3AE94279E2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB51B5D-630E-47F0-98CE-3AE94279E2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB51B5D-630E-47F0-98CE-3AE94279E2D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
