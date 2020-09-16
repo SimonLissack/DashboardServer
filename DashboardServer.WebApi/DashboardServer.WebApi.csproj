@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="System.Linq.Async" Version="4.1.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DashboardServer.Services.LanMonitor.Domain\DashboardServer.Services.LanMonitor.Domain.csproj" />
