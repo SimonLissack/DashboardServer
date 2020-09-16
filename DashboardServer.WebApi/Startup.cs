@@ -1,3 +1,4 @@
+using DashboardServer.Services.LanMonitor.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,10 @@ namespace DashboardServer.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DashboardServer", Version = "v1" });
             });
+
+            services
+                .InstallConfiguration(Configuration)
+                .InstallLanMonitorService(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

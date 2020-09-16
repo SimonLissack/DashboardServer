@@ -8,6 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\DashboardServer.Services.LanMonitor.Domain\DashboardServer.Services.LanMonitor.Domain.csproj" />
+    <ProjectReference Include="..\DashboardServer.Services.LanMonitor.Infrastructure\DashboardServer.Services.LanMonitor.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
