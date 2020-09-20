@@ -30,7 +30,7 @@ namespace DashboardServer.Services.LanMonitor.Infrastructure.Router
             {
                 activeDevices.TryGetValue(device.Mac, out var activeDevice);
 
-                yield return new RouterDevice(
+                yield return new(
                     device.Mac,
                     activeDevice?.Ip,
                     device.Name,

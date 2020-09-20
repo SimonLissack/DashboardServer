@@ -6,7 +6,7 @@ namespace DashboardServer.Services.LanMonitor.Infrastructure
 {
     public static class DeserializationExtensions
     {
-        static JsonSerializerOptions SerializerOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+        static JsonSerializerOptions SerializerOptions = new(JsonSerializerDefaults.Web);
 
         public static async Task<T> DeserializeAsync<T>(this Stream stream)
         {

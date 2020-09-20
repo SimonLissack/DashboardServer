@@ -22,7 +22,7 @@ namespace DashboardServer.Services.LanMonitor.Infrastructure.Ssh
 
         public static StreamReader OpenFileStreamReader(this ScpClient client, string fileLocation)
         {
-            return new StreamReader(client.OpenFileStream(fileLocation));
+            return new(client.OpenFileStream(fileLocation));
         }
     }
 }

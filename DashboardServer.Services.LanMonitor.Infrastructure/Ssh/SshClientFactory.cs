@@ -12,11 +12,11 @@ namespace DashboardServer.Services.LanMonitor.Infrastructure.Ssh
             _configuration = configuration;
         }
 
-        ConnectionInfo ConnectionInfo => new ConnectionInfo(_configuration.HostName, _configuration.User, new PrivateKeyAuthenticationMethod(_configuration.User, new PrivateKeyFile(_configuration.RsaKeyLocation)));
+        ConnectionInfo ConnectionInfo => new(_configuration.HostName, _configuration.User, new PrivateKeyAuthenticationMethod(_configuration.User, new PrivateKeyFile(_configuration.RsaKeyLocation)));
 
         public ScpClient CreateScpClient()
         {
-            return new ScpClient(ConnectionInfo);
+            return new(ConnectionInfo);
         }
     }
 }
