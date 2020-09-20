@@ -1,7 +1,6 @@
 ﻿using DashboardServer.Services.LanMonitor.Domain.Router;
 using DashboardServer.Services.LanMonitor.Infrastructure.Ssh;
 using System.Collections.Generic;
-using System.IO;
 
 namespace DashboardServer.Services.LanMonitor.Infrastructure.Router
 {
@@ -18,14 +17,9 @@ namespace DashboardServer.Services.LanMonitor.Infrastructure.Router
 
         public async IAsyncEnumerable<DnsMasqLease> ListCurrentLeases()
         {
-            using var client = _sshClientFactory.CreateScpClient();
-            using var stream = new MemoryStream();
-            using var streamReader = new StreamReader(stream);
-
-            client.Connect();
-            client.Download(LeasesFile, stream);
-            stream.Seek(0, SeekOrigin.Begin);
-
+            using var streamReader = _sshClientFactory
+                .CreateScpClient()
+                .OpenFileStreamReader(LeasesFile);
 
             while (!streamReader.EndOfStream)
             {
