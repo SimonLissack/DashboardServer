@@ -12,7 +12,8 @@ namespace DashboardServer.Services.LanMonitor.Infrastructure
         {
             serviceCollection
                 .AddTransient<SshClientFactory, SshClientFactory>()
-                .AddTransient<IDnsMasqLeaseService, DnsMasqLeaseService>();
+                .AddTransient<IDnsMasqLeaseService, DnsMasqLeaseService>()
+                .AddTransient<IRouterDeviceService, RouterDeviceService>();
 
             return serviceCollection;
         }
