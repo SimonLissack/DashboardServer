@@ -363,3 +363,6 @@ FodyWeavers.xsd
 
 # Custom appsetttings.json
 **/appsettings.Development.json
+
+# Custom
+/tmp
