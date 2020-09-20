@@ -1,5 +1,4 @@
 ﻿using DashboardServer.Services.LanMonitor.Domain.Router;
-using DashboardServer.Services.LanMonitor.Domain.Ssh;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,30 +11,18 @@ namespace DashboardServer.WebApi.Controllers.LanMonitor
     public class LeasesController : ControllerBase
     {
         private readonly IDnsMasqLeaseService _dnsMasqLeaseService;
-        private readonly SshConfiguration _sshConfiguration;
 
-        public LeasesController(IDnsMasqLeaseService dnsMasqLeaseService, SshConfiguration sshConfiguration)
+        public LeasesController(IDnsMasqLeaseService dnsMasqLeaseService)
         {
             _dnsMasqLeaseService = dnsMasqLeaseService;
-            _sshConfiguration = sshConfiguration;
         }
 
         [HttpGet]
-        public async Task<LeasesRepresentation> Get()
+        public async Task<List<DnsMasqLease>> Get()
         {
             var leases = _dnsMasqLeaseService.ListCurrentLeases();
 
-            return new LeasesRepresentation
-            {
-                HostName = _sshConfiguration.HostName,
-                Leases = await leases.ToListAsync()
-            };
-        }
-
-        public class LeasesRepresentation
-        {
-            public string HostName { get; set; }
-            public List<DnsMasqLease> Leases { get; set; }
+            return await leases.ToListAsync();
         }
     }
 }
