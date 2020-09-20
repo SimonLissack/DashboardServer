@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DashboardServer.WebApi.Controllers
+namespace DashboardServer.WebApi.Controllers.LanMonitor
 {
     [Route("api/[controller]")]
     [ApiController]
